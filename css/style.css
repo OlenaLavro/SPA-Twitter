@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+}
+
+body {
+    --nav-width: 20vw;
+}
+
+.main {
+    font-size: 28px;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: var(--nav-width);
+    height: 100vh;
+    background: #5D5839;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.logo,
+.socials {
+    position: absolute;
+}
+
+.logo {
+    top: 5%;
+    color: #ffffff;
+}
+
+.nav__link {
+    width: 90%;
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 70%;
+}
+
+.nav__link:hover {
+    background: rgb(144, 140, 112, 0.3);
+}
+
+.socials, .nav {
+    display: flex;
+    align-items: center;
+}
+
+.socials {
+    bottom: 0;
+    height: 13%;
+    width: 100%;
+    justify-content: space-around;
+    color: white;
+    font-size: 70%;
+}
+
+.root {
+    background: url(../images/f3e2d53d2598621671e00aa029f9fa36.png) no-repeat center;
+    background-size: cover;
+    margin-left: var(--nav-width);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.section {
+    width: 80%;
+}
+
+.section,
+.add-section,
+.edit-section {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 70%;
+}
+
+.add-section .button-list{
+    width: 20vw;
+    height: 10vh;
+}
+
+.textarea{
+margin: 10% 0;
+border: 3px solid #333121;
+font-size: 100%;
+height: 20vh;
+width: 30vw;
+}
+
+.button-list {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: #908C70;
+    margin-right: 5px;
+    color: #ffffff;
+    font-size: 90%;
+    border: 3px solid #333121;
+    cursor: pointer;
+    border-radius: 20%;
+    padding: 20px;
+}
+
+.button:hover{
+    background-color: #5D5839;
+}
+
+.list {
+    width: 100%;
+    margin-top: 5%;
+    overflow-y: auto;
+    height: 70vh;
+}
+
+.list-item,
+.list-item_liked {
+    background-color: rgb(255, 255, 255, 0.95);
+    margin: 20px;
+    list-style-type: none;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    word-break: break-word;
+}
+
+.list-item a,
+ .list-item a:visited,
+ .list-item_liked a,
+ .list-item_liked a:visited
+  {
+    color: #130618;
+    text-decoration: none;
+}
+
+.socials a{
+    color: white;
+}
+
+.liked {
+    color: red;
+}
+
+.remove-btn {
+    color: #130618;
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+.like-btn,
+.liked-btn {
+    color: #130618;
+}
+.liked-btn{
+    margin-left: auto;
+}
+
+.like-btn:hover, .remove-btn:hover {
+    color: #333121;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.back-btn{
+   font-size: 250%;
+   align-self: flex-start;
+}
+
+.back-btn:hover{
+    color: #333121;
+    cursor: pointer;
+}
+
+.fail-alert{
+    height: 13vh;
+    width: 18vw;
+    background-color: rgb(190, 85, 59,0.6);
+    top: 0;
+    position: absolute;
+    border: 3px solid white;
+    color: white;
+    font-size: 100%;
+    padding: 2%;
+    transition: .55s opacity, .55s visibility;
+    opacity: 0;
+}
+.bla{pointer-events: auto}
+@media screen and (max-width: 450px) {
+    .main {
+        font-size: 18px;
+    }
+}
+
+
