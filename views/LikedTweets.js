@@ -1,6 +1,6 @@
 import LocalStorageUtility from "../services/LocalStorageUtility.js";
 
-let LikedTweets = {
+const LikedTweets = {
     render: () => {
         const likedTweets = LocalStorageUtility.getTweetList().filter(tweet => tweet.isLiked);
         const view = `<section class="section">

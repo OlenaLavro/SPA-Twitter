@@ -1,6 +1,6 @@
 import LocalStorageUtility from "../services/LocalStorageUtility.js";
 
-let Home = {
+const Home = {
     handleGoToLikedButton: () => {
         const areThereLikedTweets = LocalStorageUtility.getTweetList().some(tweet => tweet.isLiked);
         const visibility = !areThereLikedTweets ? 'hidden' : '';

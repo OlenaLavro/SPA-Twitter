@@ -9,8 +9,22 @@ const displayAlert = function (failAlert) {
     }, 2000)
 }
 
+const isTweetUnique = function (tweetContent) {
+    const tweets = LocalStorageUtility.getTweetList();
+    const failAlert = document.querySelector('#failAlert');
+
+    const isRepeated = tweets.some(tweet => (tweet.content.trim() === tweetContent.trim()));
+
+    if (isRepeated === true) {
+        failAlert.textContent = 'Oouupss...You already have the same tweet';
+        displayAlert(failAlert);
+        return false;
+    } else {
+        return true;
+    }
+}
+
 const isTweetValid = function (tweetContent) {
-   console.log(tweetContent.length)
     const failAlert = document.querySelector('#failAlert');
     if (tweetContent.length > 100) {
         failAlert.textContent = 'Ouuupss...Tweet length is more than 100 symbols!';
@@ -24,14 +38,13 @@ const isTweetValid = function (tweetContent) {
 }
 
 
-
-let EditTweet = {
+const EditTweet = {
     handleEditBtn: () => {
         const tweetContent = document.querySelector('#textarea').value;
         const url = UrlUtility.parseUrl();
         const tweets = LocalStorageUtility.getTweetList();
 
-        if (isTweetValid(tweetContent)) {
+        if (isTweetValid(tweetContent) && isTweetUnique(tweetContent)) {
             tweets[url.tweetId].content = tweetContent;
             LocalStorageUtility.saveTweetList(tweets);
             window.history.back()
