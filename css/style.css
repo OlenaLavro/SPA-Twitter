@@ -21,8 +21,7 @@ body {
     flex-direction: column;
 }
 
-.logo,
-.socials {
+.logo, .socials {
     position: absolute;
 }
 
@@ -72,9 +71,7 @@ body {
     width: 80%;
 }
 
-.section,
-.add-section,
-.edit-section {
+.section, .add-section, .edit-section {
     margin-top: 5%;
     display: flex;
     justify-content: center;
@@ -83,17 +80,17 @@ body {
     font-size: 70%;
 }
 
-.add-section .button-list{
+.add-section .button-list {
     width: 20vw;
     height: 10vh;
 }
 
-.textarea{
-margin: 10% 0;
-border: 3px solid #333121;
-font-size: 100%;
-height: 20vh;
-width: 30vw;
+.textarea {
+    margin: 10% 0;
+    border: 3px solid #333121;
+    font-size: 100%;
+    height: 20vh;
+    width: 30vw;
 }
 
 .button-list {
@@ -112,7 +109,7 @@ width: 30vw;
     padding: 20px;
 }
 
-.button:hover{
+.button:hover {
     background-color: #5D5839;
 }
 
@@ -123,8 +120,7 @@ width: 30vw;
     height: 70vh;
 }
 
-.list-item,
-.list-item_liked {
+.list-item, .list-item_liked {
     background-color: rgb(255, 255, 255, 0.95);
     margin: 20px;
     list-style-type: none;
@@ -134,16 +130,12 @@ width: 30vw;
     word-break: break-word;
 }
 
-.list-item a,
- .list-item a:visited,
- .list-item_liked a,
- .list-item_liked a:visited
-  {
+.list-item a, .list-item a:visited, .list-item_liked a, .list-item_liked a:visited {
     color: #130618;
     text-decoration: none;
 }
 
-.socials a{
+.socials a {
     color: white;
 }
 
@@ -157,11 +149,11 @@ width: 30vw;
     margin-right: 2%;
 }
 
-.like-btn,
-.liked-btn {
+.like-btn, .liked-btn {
     color: #130618;
 }
-.liked-btn{
+
+.liked-btn {
     margin-left: auto;
 }
 
@@ -174,20 +166,20 @@ width: 30vw;
     display: none;
 }
 
-.back-btn{
-   font-size: 250%;
-   align-self: flex-start;
+.back-btn {
+    font-size: 250%;
+    align-self: flex-start;
 }
 
-.back-btn:hover{
+.back-btn:hover {
     color: #333121;
     cursor: pointer;
 }
 
-.fail-alert{
+.fail-alert {
     height: 13vh;
     width: 18vw;
-    background-color: rgb(190, 85, 59,0.6);
+    background-color: rgb(190, 85, 59, 0.6);
     top: 0;
     position: absolute;
     border: 3px solid white;
@@ -197,11 +189,13 @@ width: 30vw;
     transition: .55s opacity, .55s visibility;
     opacity: 0;
 }
-.bla{pointer-events: auto}
+
+.button-list a {
+    text-decoration: none;
+}
+
 @media screen and (max-width: 450px) {
     .main {
         font-size: 18px;
     }
 }
-
-
