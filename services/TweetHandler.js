@@ -7,6 +7,19 @@ const getTweetContent = (button) => {
 
 const getTweetListFromLocalStorage = () => LocalStorageUtility.getTweetList();
 
+// const handleGoToLikedButton = () => {
+//     // const areThereLikedTweets = LocalStorageUtility.getTweetList().some(tweet => tweet.isLiked);
+//     // const visibility = !areThereLikedTweets ? 'hidden' : '';
+
+//     // if (document.querySelector('#goToLikedBtn')) {
+//     //     !areThereLikedTweets ?
+//     //         document.querySelector('#goToLikedBtn').classList.add('hidden') :
+//     //         document.querySelector('#goToLikedBtn').classList.remove('hidden');
+//     // }
+
+//     // return visibility;
+// }
+
 const TweetHandler = {
     handleRemoveButton: (button) => {
         const tweetContent = getTweetContent(button);
@@ -17,6 +30,8 @@ const TweetHandler = {
         LocalStorageUtility.saveTweetList(tweets);
 
         button.closest('.list-item').remove();
+
+        TweetHandler.handleGoToLikedButton();
     },
 
     handleLikeButton: (button) => {
@@ -32,10 +47,30 @@ const TweetHandler = {
 
             LocalStorageUtility.saveTweetList(tweets);
         })
+
+        TweetHandler.handleGoToLikedButton();
     },
-    
-    handleAlreadyLikedButton: (button)=>{
+
+    handleAlreadyLikedButton: (button) => {
         button.closest('.list-item_liked').remove();
+    },
+
+    getGoToLikedButtonVisibillity: () => {
+        const areThereLikedTweets = LocalStorageUtility.getTweetList().some(tweet => tweet.isLiked);
+
+        return areThereLikedTweets ? '' : 'hidden';
+    },
+
+    handleGoToLikedButton: () => {
+        const goToLikedBtn = document.querySelector('#goToLikedBtn');
+
+        if (goToLikedBtn && TweetHandler.getGoToLikedButtonVisibillity()) {
+            goToLikedBtn.classList.add('hidden');
+        }
+        if(goToLikedBtn && !TweetHandler.getGoToLikedButtonVisibillity()){
+            goToLikedBtn.classList.remove('hidden');
+        }
+
     }
 }
 

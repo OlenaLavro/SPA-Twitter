@@ -29,19 +29,24 @@ const handleButtons = (event) => {
 
     if (target.id === 'saveBtn') {
         AddTweet.handleSaveBtn();
-    } else if (target.id === 'editBtn') {
+    } 
+    if (target.id === 'editBtn') {
         EditTweet.handleEditBtn();
-    } else if (target.id === 'cancelBtn'
+    } 
+    if (target.id === 'cancelBtn'
         || target.id === 'backBtn'
         || target.parentElement.id === "backBtn") {
         AddTweet.handleCancelBtn();
-    } else if (target.parentElement.classList.contains('remove-btn')
+    }
+    if (target.parentElement.classList.contains('remove-btn')
         || (target.parentElement.parentElement.classList.contains('remove-btn'))) {
         TweetHandler.handleRemoveButton(event.target);
-    } else if (target.parentElement.parentElement.classList.contains('like-btn')) {
+    }
+    if (target.parentElement.parentElement.classList.contains('like-btn')) {
         TweetHandler.handleLikeButton(event.target);
-        Home.handleGoToLikedButton();
-    } else if (target.parentElement.parentElement.classList.contains('liked-btn')) {
+        // Home.handleGoToLikedButton();
+    }
+    if (target.parentElement.parentElement.classList.contains('liked-btn')) {
         TweetHandler.handleAlreadyLikedButton(event.target);
         TweetHandler.handleLikeButton(event.target);
     }
